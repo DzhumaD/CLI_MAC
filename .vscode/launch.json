@@ -8,15 +8,15 @@
             "name": "(gdb) Запуск канала",
             "type": "cppdbg",
             "request": "launch",
-            "program": "./main",
+            "program": "${fileDirname}/test",
             "args": [
-                "opts",
-                "-a",
-                "323",
-                "-b",
+                //"opts",
+                "-m",
+                "01:02:03:AA:BB:CC",
+                /*"-b",
                 "23",
                 "-o",
-                "'+'"
+                "'+'"*/
             ],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",

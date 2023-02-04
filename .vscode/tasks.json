@@ -9,7 +9,7 @@
                 "-g",
                 "main.c",
                 "-o",
-                "main"
+                "test"
             ],
             "options": {
                 "cwd": "${fileDirname}"
