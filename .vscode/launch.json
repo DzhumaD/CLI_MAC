@@ -11,8 +11,8 @@
             "program": "${fileDirname}/test",
             "args": [
                 //"opts",
-                "-m",
-                "F1:02:03:AD:BB:CC",
+                "-l",
+                "F1:02:03hgmgmjh:CC",
                 /*"-b",
                 "23",
                 "-o",

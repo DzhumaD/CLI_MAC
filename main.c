@@ -15,26 +15,19 @@ int main(int argc, char* argv[]){
     }
     char *opts = "m:"; // доступные опции, каждая принимает аргумент
     char *a; // тут храним мак - адрес
-    //char b[17]; 
-    //char op; // а тут оператор
     int opt; // каждая следующая опция попадает сюда
     while((opt = getopt(argc, argv, opts)) != -1) { // вызываем getopt пока она не вернет -1
         switch(opt) {
             case 'm': // если опция -a, преобразуем строку с аргументом в число
                 a = optarg;
-                //b = atoi(a);
                 printf("Мак-адрес для проверки: %s\n",a);//printf("");
                 break;
             default:
+                printf("Неизвестный тест\n");
                 return 1; //неизвестный тест    
         }
     }
-    /*if(a[17] == '\0'){
-        printf("Конец строки\n");
-    }*/
-    int count = 0;
     int i=0;
-    //int check = 0;
     while(a[i] != '\0'){    
         if((i+1)%3){
             if( !(48<=a[i] && a[i]<=57 || 'A'<=a[i] && a[i]<='F' || 'a'<=a[i] && a[i]<='f') ){
