@@ -3,13 +3,12 @@
 #include <curses.h>
 #include <unistd.h>
 extern char *optarg;
+void announce(void);
 
 int main(int argc, char* argv[]){
     /*Описание функций пользователю*/
     if (argc == 1){
-        printf("Утилита проверки MAC-адреса.\n");
-        printf("usage: test [-m] <mac_adress>\n");
-        printf("Пример команды: $ test -m 01:02:03:AA:BB:CC\n");
+        announce();
         return 0;
     }
 
@@ -44,5 +43,12 @@ int main(int argc, char* argv[]){
     printf("Корректный MAC-адрес\n");
     return 0;
 }
-
-void annonce()
+/**
+ * Приветствие пользователя. Описание функционала.
+*/
+void announce (void){
+    printf("Утилита проверки MAC-адреса.\n");
+    printf("usage: test [-m] <mac_adress>\n");
+    printf("Пример команды: $ test -m 01:02:03:AA:BB:CC\n");
+    //return 0;
+}
