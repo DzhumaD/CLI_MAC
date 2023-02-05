@@ -4,15 +4,15 @@
 #include <unistd.h>
 extern char *optarg;
 
-/*
-* 0...9 = 48...57
-* : = 58
-* A...F = 65...70
-*/
 int main(int argc, char* argv[]){
+    /*Описание функций пользователю*/
     if (argc == 1){
-        printf("Hello, world!\n");
+        printf("Утилита проверки MAC-адреса.\n");
+        printf("usage: test [-m] <mac_adress>\n");
+        printf("Пример команды: $ test -m 01:02:03:AA:BB:CC\n");
+        return 0;
     }
+
     char *opts = "m:"; // доступные опции, каждая принимает аргумент
     char *a; // тут храним мак - адрес
     int opt; // каждая следующая опция попадает сюда
