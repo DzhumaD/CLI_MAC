@@ -8,14 +8,17 @@ int valid_mac(char *m);
 
 int main(int argc, char* argv[]){
     
+    const char *opts = "m:"; // доступные опции, каждая принимает аргумент
+    char *mac_addr; // тут храним мак - адрес
+    int opt; // каждая следующая опция попадает сюда
+
     if (argc == 1){ //команда без аргументов
         announce(); 
         return 0;
     }
-
-    const char *opts = "m:"; // доступные опции, каждая принимает аргумент
-    char *mac_addr; // тут храним мак - адрес
-    int opt; // каждая следующая опция попадает сюда
+    /**
+     * Чтение команды. Проверка опции. Возврат MAC-адреса.
+    */
     while((opt = getopt(argc, argv, opts)) != -1) { // вызываем getopt пока она не вернет -1
         switch(opt) {
             case 'm': // если опция -a, преобразуем строку с аргументом в число
@@ -27,7 +30,7 @@ int main(int argc, char* argv[]){
                 return 1; //неизвестный тест    
         }
     }
-    return valid_mac(mac_addr);
+    return valid_mac(mac_addr); 
 }
 /**
  * Приветствие пользователя. Описание функционала.
@@ -39,7 +42,7 @@ void announce (void){
     //return 0;
 }
 /**
- *  Проверка корректности MAC-адреса. 0 - корректный. 1 - некорректный.
+ *  Проверка корректности MAC-адреса. 0 - корректный. 2 - некорректный.
 */
 int valid_mac(char *m){
     int i=0;
@@ -61,20 +64,5 @@ int valid_mac(char *m){
     printf("Корректный MAC-адрес\n");
 }
 
-/**
- * Чтение команды. Проверка опции. Возврат MAC-адреса.
-*/
-/* void read_command(argc, argv, opts){
-    int opt; // каждая следующая опция попадает сюда
-    while((opt = getopt(argc, argv, opts)) != -1) { // вызываем getopt пока она не вернет -1
-        switch(opt) {
-            case 'm': // если опция -a, преобразуем строку с аргументом в число                
-                printf("Мак-адрес для проверки: %s\n",optarg);//printf("");
-                return(optarg);
-                break;
-            default:
-                printf("Неизвестный тест\n");
-                return 1; //неизвестный тест    
-        }
-    }
-} */
+
+
