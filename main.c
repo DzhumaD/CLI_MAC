@@ -37,10 +37,12 @@ int main(int argc, char* argv[]){
         }
         i++;
     }
-    if(i < 17){
-        printf("Некорректный MAC-адрес: нехватка данных");
+    if(i != 17){
+        printf("Некорректный MAC-адрес: несоответствие числа символов\n");
         return 2; // нехватка данных
     } 
     printf("Корректный MAC-адрес\n");
     return 0;
 }
+
+void annonce()
