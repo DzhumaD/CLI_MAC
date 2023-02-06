@@ -21,7 +21,7 @@ int main(int argc, char* argv[]){
     */
     while((opt = getopt(argc, argv, opts)) != -1) { // вызываем getopt пока она не вернет -1
         switch(opt) {
-            case 'm': // если опция -a, преобразуем строку с аргументом в число
+            case 'm': 
                 mac_addr = optarg;
                 printf("Мак-адрес для проверки: %s\n",mac_addr);//printf("");
                 break;
